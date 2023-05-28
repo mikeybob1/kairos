@@ -1,0 +1,11 @@
+.gdbinit
+build/
+fs.img
+mkfs
+os.bin
+sbi-qemu
+kernel-qemu
+include/generated
+src/include/generated
+lmbench_all.asm
+sync_all.sh
