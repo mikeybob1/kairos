@@ -1,0 +1,10 @@
+obj-y += dmac.o
+# obj-y += gpio.o
+obj-y += sdcard.o
+obj-y += spi.o
+obj-y += sysctl.o
+obj-y += fpioa.o
+obj-y += gpiohs.o
+# obj-y += diskio.o
+obj-y += uarths.o
+obj-y += wdt.o
