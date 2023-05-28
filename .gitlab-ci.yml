@@ -1,0 +1,10 @@
+stages:
+  - sync
+
+sync_labs:
+  stage: sync
+  only: 
+    - template
+  script:
+  - "curl -X POST --fail -F token=$AUTO_SYNC_TOKEN -F ref=main http://gitlab.ji-sang.com/api/v4/projects/27/trigger/pipeline"
+
