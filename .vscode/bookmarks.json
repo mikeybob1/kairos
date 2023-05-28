@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"path": "src/platform/k210/driver/sysctl.c",
+			"bookmarks": [
+				{
+					"line": 1467,
+					"column": 38,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "include/device.h",
+			"bookmarks": [
+				{
+					"line": 15,
+					"column": 49,
+					"label": ""
+				}
+			]
+		}
+	]
+}
