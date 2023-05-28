@@ -1,0 +1,70 @@
+{
+    "files.associations": {
+        "*.xdc": "tcl",
+        "Makefile.*": "makefile",
+        "array": "c",
+        "*.tcc": "c",
+        "functional": "c",
+        "tuple": "c",
+        "cstdio": "c",
+        "cstddef": "cpp",
+        "type_traits": "cpp",
+        "cmath": "cpp",
+        "limits": "cpp",
+        "cstdint": "c",
+        "random": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "algorithm": "c",
+        "memory": "c",
+        "exception": "c",
+        "memory_resource": "c",
+        "fstream": "c",
+        "iosfwd": "c",
+        "new": "c",
+        "ostream": "c",
+        "sstream": "c",
+        "streambuf": "c",
+        "istream": "cpp",
+        "typeinfo": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "optional": "c",
+        "stdexcept": "c",
+        "numeric": "c",
+        "deque": "c",
+        "*.inc": "c",
+        "charconv": "c",
+        "hash_map": "c",
+        "hash_set": "c",
+        "bitset": "c",
+        "rope": "c",
+        "slist": "c",
+        "regex": "c",
+        "dynamic_bitset": "c",
+        "atomic": "c",
+        "bit": "c",
+        "system_error": "c",
+        "*.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled",
+    "todohighlight.keywords": [
+        {
+            "text": "OK:",
+            "backgroundColor": "green",
+            "color": "white"
+        },
+        {
+            "text": "TODO:",
+            "backgroundColor": "#005ba4",
+            "color": "white"
+        }
+    ],
+    "C_Cpp.dimInactiveRegions": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen",
+        "-workbench.action.terminal.paste"
+    ]
+}   
