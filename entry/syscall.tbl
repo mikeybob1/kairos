@@ -1,0 +1,41 @@
+########### Note ##############
+# add syscall here 
+# (`__sys_dummy` means unimplemented)
+# id   name      impl_name 
+############Proc###############
+ 1     fork      sys_fork
+ 3     wait      sys_wait
+93     exit      sys_exit  
+98     futex     sys_futex
+101    nanosleep sys_nanosleep
+172    getpid    sys_getpid
+178    gettid    sys_gettid
+220    clone     sys_clone
+221    exec      sys_exec
+260    wait4     sys_wait4
+#############Fs################
+17     getcwd    sys_getcwd
+23     dup       sys_dup    
+24     dup3      sys_dup3
+34     mkdirat   sys_mkdirat
+35     unlinkat  sys_unlinkat
+49     chdir     sys_chdir  
+56     openat    sys_openat
+57     close     sys_close
+59     pipe2     sys_pipe2
+62     lseek     sys_lseek
+63     read      sys_read
+64     write     sys_write
+###############MM###############
+214     brk       sys_brk  
+215     munmap    sys_munmap
+222     mmap      sys_mmap
+##############Sys###############
+96      set_tid_address sys_set_tid_address
+113     clock_gettime   sys_clock_gettime
+153     times           sys_times
+160     uname           sys_uname
+169     gettimeofday    sys_gettimeofday
+#############TEST###############
+235    memuse       sys_memuse
+234    halt         sys_halt
