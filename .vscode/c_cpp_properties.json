@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "RV64GC",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/src/include/**",
+                "${workspaceFolder}/src/platform/**",
+                "${workspaceFolder}/user/include/**"
+            ],
+            "defines": [
+                "__riscv",
+                "__riscv_xlen=64",
+                "USE_SIGNALS",
+                "__STDC_HOSTED__=0",
+                "LAB_ID=-1",
+                "LAB_DES=None",
+                "CPUS=1",
+                "QEMU"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/riscv64-unknown-elf-gcc",
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "cStandard": "c11",
+            "compilerArgs": [
+                "-fstrict-volatile-bitfields",
+                "-fno-common ",
+                "-nostdlib ",
+                "-mno-relax"
+            ]
+        }
+    ],
+    "version": 4
+}
