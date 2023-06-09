@@ -142,6 +142,11 @@ static void unlink(entry_t *entry) {
 }
 
 
+// caller holds lock
+int read_dents(entry_t *entry, off_t *offset, char *buf, int n) {
+  return fat_read_dents(entry->fat, entry->clus_start, offset, buf, n);
+}
+
 
 extern void background_writeout(uint64_t min_pages);
 extern int pdflush_operation(void (*fn)(uint64_t), unsigned long arg0);
