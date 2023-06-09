@@ -1,23 +1,13 @@
-#ifndef __STDDEF_H__
-#define __STDDEF_H__
+#ifndef _H_LINUX_DEF_
+#define _H_LINUX_DEF_
 
-/* Represents true-or-false values */
-typedef int bool;
+#include <stddef.h>
+#include <stdint.h>
 
-/* Explicitly-sized versions of integer types */
-typedef char int8;
-typedef unsigned char uint8_t;
-typedef short int16;
-typedef unsigned short uint16_t;
-typedef int int32;
-typedef unsigned int uint32_t;
-typedef long long int64_t;
-typedef unsigned long long uint64_t;
-typedef unsigned int uint;
 
 #define ULONG_MAX (0xffffffffffffffffULL)
 #define LONG_MAX (0x7fffffffffffffffLL)
-#define INTMAX_MAX LONG_MAX
+// #define INTMAX_MAX LONG_MAX
 #define UINT_MAX (0xffffffffU)
 #define INT_MAX (0x7fffffff)
 #define UCHAR_MAX (0xffU)
@@ -46,10 +36,6 @@ typedef int pid_t;
 
 #define SIGCHLD   17
 
-#define va_start(ap, last) (__builtin_va_start(ap, last))
-#define va_arg(ap, type) (__builtin_va_arg(ap, type))
-#define va_end(ap) (__builtin_va_end(ap))
-#define va_copy(d, s) (__builtin_va_copy(d, s))
 typedef __builtin_va_list va_list;
 
 #define O_RDONLY 000
@@ -59,8 +45,8 @@ typedef __builtin_va_list va_list;
 #define O_CREATE 0100
 #define O_DIRECTORY 0200000
 
-#define DIR 0x040000
-#define FILE 0x100000
+#define DIR 1
+#define FILE 2 
 
 #define AT_FDCWD -100
 
@@ -168,4 +154,4 @@ struct linux_dirent64 {
 #define FUTEX_TRYLOCK_PI	8
 #define FUTEX_WAIT_BITSET	9
 
-#endif // __STDDEF_H__
+#endif
