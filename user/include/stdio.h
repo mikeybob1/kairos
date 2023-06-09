@@ -21,7 +21,8 @@ typedef long int intmax_t;
 int getchar();
 int putchar(int);
 int puts(const char *s);
-void printf(const char *fmt, ...);
+
+#include <printf.h>
 
 
 #define grn(str) 	"\e[32;1m"str"\e[0m"
