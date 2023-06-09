@@ -68,7 +68,6 @@ struct fat_entry {
 
 entry_t *namee(entry_t *from, char *path);
 entry_t *nameeparent(entry_t *from, char *path, char *name);
-void etrunc(entry_t *entry, off_t size);
 void elock(entry_t *entry);
 void eunlock(entry_t *entry);
 void eunlockput(entry_t *entry);
@@ -81,7 +80,6 @@ char *namepath(entry_t *entry, char *buf);
 // int namepath(entry_t *from, char *path);
 int entry_rename(entry_t *entry, const char *newname);
 int read_dents(entry_t *entry, off_t *offset, char *buf, int n);
-void estat(entry_t *entry, struct kstat *stat);
 void sych_entry_in_disk(entry_t *entry);
 
 page_t *find_get_page(address_space_t *mapping, unsigned long offset);
@@ -90,7 +88,6 @@ void free_mapping(entry_t *entry);
 int do_generic_mapping_read(struct address_space *mapping, int user, uint64_t buff, int off, int n);
 uint64_t do_generic_mapping_write(struct address_space *mapping, int user, uint64_t buff, int off, int n);
 rw_page_list_t* find_pages_tag(address_space_t *mapping, uint32_t tag);
-void writeback_file_to_disk(entry_t *entry);
 void __remove_from_page_cache(page_t *page);
 void remove_from_page_cache(page_t *page);
 void *radix_tree_delete(struct radix_tree_root *root, unsigned long index);
