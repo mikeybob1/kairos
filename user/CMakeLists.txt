@@ -11,7 +11,7 @@ set(BIN_DIR bin)
 
 # Toolchain
 set(PREFIX ${ARCH}-unknown-elf-)
-set(CMAKE_C_FLAGS       "-march=rv64imafc -mabi=lp64f -mcmodel=medany")
+set(CMAKE_C_FLAGS       "-march=rv64g -mcmodel=medany")
 set(CMAKE_C_COMPILER_WORKS TRUE)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)
 set(CMAKE_ASM_COMPILER      ${PREFIX}gcc)
@@ -20,16 +20,16 @@ set(CMAKE_CXX_COMPILER      ${PREFIX}g++)
 set(CMAKE_OBJCOPY           ${PREFIX}objcopy)
 set(CMAKE_OBJDUMP           ${PREFIX}objdump)
 set(CMAKE_RANLIB            ${PREFIX}ranlib)
-set(CMAKE_C_FLAGS           "${CMAKE_C_FLAGS} -fno-builtin -nostdinc -fno-stack-protector -mno-relax -ggdb -Wall")
+set(CMAKE_C_FLAGS           "${CMAKE_C_FLAGS} -ffreestanding -fno-common -nostdlib -fno-stack-protector -mno-relax -ggdb -Wall")
 set(CMAKE_C_FLAGS           "${CMAKE_C_FLAGS} -DLAB_ID=${LAB_ID} -DLAB_DES='${LAB_DES}'")
 set(CMAKE_ASM_FLAGS         ${CMAKE_C_FLAGS})
-set(CMAKE_C_LINK_FLAGS      "${LINK_FLAGS} -nostdlib")
+set(CMAKE_C_LINK_FLAGS      "${LINK_FLAGS}")
 
 project(user)
 
 # Library
 aux_source_directory(lib LIBS)
-set(LIBS ${ARCH_DIR}/crt.S lib/clone.s ${LIBS})
+set(LIBS ${ARCH_DIR}/crt0.S lib/clone.s ${LIBS})
 add_library(ulib ${LIBS} ${CMAKE_SOURCE_DIR}/lib/syscall_ids.h)
 include_directories(include/)
 # include_directories(../include/)
