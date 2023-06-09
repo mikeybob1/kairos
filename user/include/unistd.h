@@ -1,15 +1,15 @@
 #ifndef __UNISTD_H__
 #define __UNISTD_H__
 
-#include "stddef.h"
+#include <linux_def.h>
 
 extern int __clone(int (*func)(void *), void *stack, int flags, void *arg, ...);
 
 int open(const char *, int);
 int openat(int, const char*, int);
 
-ssize_t read(int, void *, size_t);
-ssize_t write(int, const void *, size_t);
+size_t read(int, void *, size_t);
+size_t write(int, const void *, size_t);
 
 int close(int);
 pid_t getpid(void);
