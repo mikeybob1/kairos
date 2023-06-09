@@ -439,3 +439,25 @@ uint64_t sys_munmap(void) {
     mmap_unmap(p->mm, addr);
     return 0;
 }
+
+
+uint64_t sys_getdents64(void) {
+    struct file* f;
+    uint64_t addr;
+    int len;
+
+    if (argfd(0, 0, &f) < 0 || argaddr(1, &addr) < 0 || argint(2, &len) < 0)
+        return -1;
+
+    char* buf = (char*)kmalloc(len);
+    elock(f->ep);
+    int ret = read_dents(f->ep, &f->off, buf, len);
+    eunlock(f->ep);
+
+    if (copyout(addr, buf, len) == -1) {
+        kfree(buf);
+        return -1;
+    }
+    kfree(buf);
+    return ret;
+}

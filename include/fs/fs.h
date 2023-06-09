@@ -78,6 +78,7 @@ void eput(entry_t *entry);
 entry_t *edup(entry_t *entry);
 char *namepath(entry_t *entry, char *buf);
 int entry_rename(entry_t *entry, const char *newname);
+int read_dents(entry_t *entry, off_t *offset, char *buf, int n);
 void sych_entry_in_disk(entry_t *entry);
 
 page_t *find_get_page(address_space_t *mapping, unsigned long offset);
