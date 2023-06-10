@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "fs/fat.h"
+#include "param.h"
 
 
 typedef struct lookup_helper {
@@ -75,7 +76,7 @@ static int extractname(dir_slot_t *slot, char *buf) {
             nullflag = (c == '\0');
         } else {
             if (dir[lfnOfs[i]] != 0xff || dir[lfnOfs[i] + 1] != 0xff)
-                panic("bad fill");
+                return -1;
         }
     }
     
