@@ -48,7 +48,7 @@ ls(char *path)
       nr++;
     }
   }
-
+  printf("\n");
   close(fd);
 }
 
