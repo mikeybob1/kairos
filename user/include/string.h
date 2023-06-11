@@ -1,7 +1,7 @@
 #ifndef __STRING_H__
 #define __STRING_H__
 
-// #include "stddef.h"
+#include "stddef.h"
 
 int isspace(int c);
 int isdigit(int c);
@@ -12,6 +12,8 @@ size_t strlen(const char *);
 size_t strnlen(const char *s, size_t n);
 char *strncpy(char *restrict d, const char *restrict s, size_t n);
 int strncmp(const char *_l, const char *_r, size_t n);
+size_t strcspn(const char *s, const char *c);
+char *strtok(char *restrict s, const char *restrict sep);
 
 #define _STR(x) #x
 #define STR(x) _STR(x)
