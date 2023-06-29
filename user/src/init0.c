@@ -9,7 +9,7 @@ void __run(char *argv[]);
 
 void main() {
     run("welcome");
-    run("sh");
+    // run("sh");
     halt();
 }
 
