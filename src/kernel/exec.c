@@ -107,7 +107,7 @@ int exec(char *path, char *argv[]) {
     }
     // debug("%s: loadseg done entry is %#lx", path, elfentry);
     eunlock(ep);
-
+    mmap_print(p->mm);
     // initcode has not exe
     if (p->exe) {
         eput(p->exe);

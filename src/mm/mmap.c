@@ -471,8 +471,8 @@ void mmap_deref(mm_t *self) {
 void mmap_print(mm_t *mm) {
     vma_t *vma;
     int id = 1;
-
-    // TODO:
-    // iterate vma linklist led with mm->vma_head
-    // print the order and vma info
+    list_for_each_entry(vma, &mm->vma_head, head) {
+        kprintf("%d. ", id++);
+        vma_print(vma);
+    }
 }
